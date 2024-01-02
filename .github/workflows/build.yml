@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "*"
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/main'
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v3.0.0
+      - name: Build
+        uses: shalzz/zola-deploy-action@v0.16.1-1
+        env:
+          BUILD_ONLY: true
+          BUILD_FLAGS: --drafts
+          WHATEVER: "freddd"
